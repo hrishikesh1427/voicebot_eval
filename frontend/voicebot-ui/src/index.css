@@ -1,0 +1,189 @@
+/* src/index.css - Tailwind v4 compatible */
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
+
+/* Root / base tweaks */
+:root{
+  --page-bg: #f3f4f6; /* gray-100 */
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #0f172a; /* slate-900 */
+}
+
+html,body,#root {
+  height: 100%;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial;
+  background: var(--page-bg);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+/* Page container */
+.app-container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 20px;
+}
+
+/* Header */
+.report-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+.report-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.report-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Card */
+.section-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid rgba(15,23,42,0.06);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+  padding: 18px;
+}
+
+/* Section header */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.section-badge {
+  background: linear-gradient(90deg,#0ea5e9,#06b6d4);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight:700;
+  font-size:0.9rem;
+  box-shadow: 0 4px 10px rgba(6,95,170,0.08);
+}
+
+/* Metric row */
+.metric {
+  display: grid;
+  grid-template-columns: 1fr 96px;
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(2,6,23,0.01), transparent);
+  border: 1px solid rgba(15,23,42,0.03);
+}
+.metric + .metric {
+  margin-top: 10px;
+}
+
+.metric-left {
+  font-size: 0.95rem;
+}
+.metric-name {
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: none;
+}
+.metric-comments {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+.metric-proof {
+  font-style: italic;
+  color: #0b6b8b;
+  background: rgba(6,182,212,0.06);
+  padding: 8px;
+  border-radius: 8px;
+  border-left: 3px solid rgba(6,182,212,0.16);
+}
+
+/* score box on right */
+.metric-right {
+  text-align: right;
+}
+.metric-score {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+.metric-max {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* section grid */
+.sections-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .sections-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* final score card */
+.final-card {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(90deg,#eef2ff,#f0f9ff);
+  border: 1px solid rgba(14,165,233,0.08);
+}
+.final-score {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #075985;
+}
+.final-label {
+  color: var(--muted);
+}
+
+/* small utility */
+.muted { color: var(--muted); font-size:0.9rem; }
+/* Search input */
+.search-input {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,42,0.1);
+  background: #fff;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+.search-input:focus {
+  outline: none;
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 2px rgba(6,182,212,0.2);
+}
+
+/* Report grid */
+.report-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

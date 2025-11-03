@@ -1,0 +1,7 @@
+Agent: Good morning, am I speaking with Mr. [Customer Name]?
+Customer: Yes.
+Agent: Sir, this is [Agent Name] from Maruti Suzuki calling on a recorded line regarding your Extended Warranty renewal.
+Customer: I’m driving right now, please call later.
+Agent: Sure sir, no problem. I’ll schedule a callback at your convenience. When would be a good time to call you again — later today or tomorrow morning?
+Customer: Tomorrow morning.
+Agent: Noted sir, we’ll call you tomorrow morning. Thank you and drive safe!

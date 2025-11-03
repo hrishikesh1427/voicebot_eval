@@ -1,0 +1,128 @@
+{
+  "transcript_filename": "3.txt",
+  "timestamp": 1762148515,
+  "sections": {
+    "quality": {
+      "metrics": [
+        {
+          "name": "intent_understanding",
+          "score": 9.0,
+          "max": 10,
+          "comments": "The voicebot effectively understood the customer's intent and responded accordingly, with minor instances of unnecessary confirmation.",
+          "proof": "Customer: I plan to keep this car for at least 5 years. Which plan would you recommend? Agent: For 5-year ownership, the Royal Platinum plan would be perfect."
+        },
+        {
+          "name": "response_relevance",
+          "score": 9.0,
+          "max": 10,
+          "comments": "The agent provided relevant information and options to the customer's query, demonstrating a clear understanding of the Extended Warranty program.",
+          "proof": "Agent: Since you're within the active warranty period, you're eligible for our Extended Warranty program. Would you like to know more about securing your car beyond the standard 2-year coverage?"
+        },
+        {
+          "name": "context_continuity",
+          "score": 9.0,
+          "max": 10,
+          "comments": "The agent maintains context throughout the conversation, effectively addressing the customer's queries and providing relevant information.",
+          "proof": "Agent: Sir, I'm calling regarding your Maruti Suzuki Baleno, registration number KA-01-MP-7896. Could you please confirm the model? Customer: Yes, that's correct. Baleno Zeta. Agent: Thank you for confirming. Our records show your car was purchased in August 2023, making your standard warranty valid until August 2025."
+        }
+      ],
+      "total_score": 27.0,
+      "max_score": 30,
+      "percentage": 90.0
+    },
+    "business": {
+      "metrics": [
+        {
+          "name": "conversion_accuracy",
+          "score": 12.0,
+          "max": 15,
+          "comments": "The voicebot successfully sold the Extended Warranty program to the customer, but could have provided more details about the plans before recommending the Royal Platinum.",
+          "proof": "Agent: For 5-year ownership, the Royal Platinum plan would be perfect. It covers you until 2028 and costs \u20b913,500 for your Baleno."
+        },
+        {
+          "name": "upsell_emi",
+          "score": 5.0,
+          "max": 5,
+          "comments": "The agent effectively upsold the Royal Platinum plan to the customer, addressing their specific needs and providing clear information about the benefits and costs.",
+          "proof": "Agent: For 5-year ownership, the Royal Platinum plan would be perfect. It covers you until 2028 and costs \u20b913,500 for your Baleno."
+        },
+        {
+          "name": "escalation_accuracy",
+          "score": 10.0,
+          "max": 10,
+          "comments": "The agent successfully escalated the customer to the Extended Warranty program without any issues.",
+          "proof": "Agent: Since you're within the active warranty period, you're eligible for our Extended Warranty program."
+        }
+      ],
+      "total_score": 27.0,
+      "max_score": 30,
+      "percentage": 90.0
+    },
+    "experience": {
+      "metrics": [
+        {
+          "name": "empathy_tone",
+          "score": 12.0,
+          "max": 15,
+          "comments": "The agent uses polite language and acknowledges the customer's response, showing empathy. However, there are instances where the agent could be more empathetic, such as when discussing the warranty expiration.",
+          "proof": "Thank you for confirming. Our records show your car was purchased in August 2023, making your standard warranty valid until August 2025."
+        },
+        {
+          "name": "interruption_handling",
+          "score": 9.0,
+          "max": 10,
+          "comments": "The agent handled interruptions smoothly, confirming the customer's details and model before proceeding with the sales pitch. The only minor issue is that the agent didn't explicitly acknowledge the customer's confirmation of the recommended plan.",
+          "proof": "Customer: I plan to keep this car for at least 5 years. Which plan would you recommend? Agent: For 5-year ownership, the Royal Platinum plan would be perfect."
+        },
+        {
+          "name": "politeness_clarity",
+          "score": 5.0,
+          "max": 5,
+          "comments": "The agent consistently uses polite language and is clear in their communication throughout the conversation.",
+          "proof": "Good morning, am I speaking with Mr. Rohan Malhotra?, Thank you for confirming, Thank you for your time, Have a great day ahead!"
+        }
+      ],
+      "total_score": 26.0,
+      "max_score": 30,
+      "percentage": 86.67
+    },
+    "compliance": {
+      "metrics": [
+        {
+          "name": "introduction",
+          "score": 5.0,
+          "max": 5,
+          "comments": "The agent clearly states her name, the company name, and that the call is on a recorded line.",
+          "proof": "Mr. Malhotra, my name is Sneha calling from Maruti Suzuki on a recorded line."
+        },
+        {
+          "name": "verification",
+          "score": 5.0,
+          "max": 5,
+          "comments": "Customer confirmed their name and vehicle details accurately throughout the conversation.",
+          "proof": "Customer: Yes. Agent: Mr. Malhotra, my name is Sneha calling from Maruti Suzuki on a recorded line. How are you doing today? Customer: I'm fine, thank you. Agent: Sir, I'm calling regarding your Maruti Suzuki Baleno, registration number KA-01-MP-7896. Could you please confirm the model? Customer: Yes, that's correct. Baleno Zeta."
+        },
+        {
+          "name": "rules_compliance",
+          "score": 5.0,
+          "max": 5,
+          "comments": "The voicebot correctly escalates the customer to the Extended Warranty program and provides detailed information about the plans, ensuring the customer understands the options.",
+          "proof": "Our records show your car was purchased in August 2023, making your standard warranty valid until August 2025. Since you're within the active warranty period, you're eligible for our Extended Warranty program. Would you like to know more about securing your car beyond the standard 2-year coverage?"
+        },
+        {
+          "name": "closing",
+          "score": 5.0,
+          "max": 5,
+          "comments": "The agent uses a polite and friendly tone while closing the conversation.",
+          "proof": "Thank you for your time. Have a great day ahead!"
+        }
+      ],
+      "total_score": 20.0,
+      "max_score": 20,
+      "percentage": 100.0
+    }
+  },
+  "aggregated": {
+    "final_weighted_score": 90.17
+  }
+}

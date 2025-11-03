@@ -1,0 +1,32 @@
+# --- Environment files ---
+.env
+.env.local
+.env.*
+
+# --- Python cache ---
+__pycache__/
+*.pyc
+*.pyo
+
+# --- Logs & runtime ---
+*.log
+*.tmp
+
+# --- Virtual environment ---
+venv/
+env/
+.venv/
+
+# --- Node / Frontend ---
+node_modules/
+dist/
+build/
+.vite/
+
+# --- Evaluations & transcripts (if large/private) ---
+evaluations/
+transcripts/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db

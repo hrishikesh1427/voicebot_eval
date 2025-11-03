@@ -1,0 +1,9 @@
+Agent: Good afternoon! Am I speaking with Mr. [Customer Name]?
+Customer: Yes.
+Agent: Sir, I’m calling from Maruti Suzuki on a recorded line regarding the Convenience Care Package. This plan helps you maintain your vehicle cost-effectively, especially during monsoon or flood seasons. Have you heard of it before?
+Customer: No, not really.
+Agent: No worries sir. It covers annual maintenance, free pick-up & drop, and special care for flood-prone areas. Given your city often faces waterlogging, this package ensures quick service if your car is affected.
+Customer: That sounds useful.
+Agent: Yes sir, it’s highly recommended in your region. I can connect you with our service advisor who will share details and pricing. Shall I arrange that call for you?
+Customer: Yes please.
+Agent: Thank you sir. Our advisor will reach out shortly. Have a great day!

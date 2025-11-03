@@ -1,0 +1,9 @@
+Agent: Good morning! Am I speaking with Mr. [Customer Name]?
+Customer: Yes.
+Agent: Sir, this is [Agent Name] calling from Maruti Suzuki on a recorded line. I’m calling about your vehicle’s Extended Warranty renewal.
+Customer: I’m not interested.
+Agent: No problem sir, may I know the reason? Is it because you’re planning to sell your vehicle?
+Customer: Yes, I’m planning to sell it soon.
+Agent: Understood sir. Thanks for letting us know. If you change your mind before selling, you can still renew and transfer the warranty to the new owner. It adds value to your sale.
+Customer: Okay.
+Agent: Thank you for your time, sir. Have a nice day!

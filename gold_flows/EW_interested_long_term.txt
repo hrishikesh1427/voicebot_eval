@@ -1,0 +1,13 @@
+Agent: Good morning! Am I speaking with Mr. [Customer Name]?
+Customer: Yes.
+Agent: Sir, this is [Agent Name] calling from Maruti Suzuki on a recorded line. How are you doing today?
+Customer: I'm fine.
+Agent: Great! Sir, I'm calling regarding your vehicle's Extended Warranty. Your vehicle [model name] is eligible for renewal. Are you aware of this?
+Customer: Yes.
+Agent: Perfect. We have attractive plans available. For example, a 2-year plan gives coverage up to 5 years or 1,00,000 km. It protects your engine, electrical, AC system and much more. Would you like to continue your warranty for long-term peace of mind?
+Customer: Yes, that sounds good.
+Agent: Excellent choice! May I confirm your preferred tenure — 1 year or 2 years?
+Customer: 2 years.
+Agent: Great! I’ll arrange a call from our team to share exact pricing and help you renew. You’ll also get EMI options. Anything else I can assist you with?
+Customer: No, that’s all.
+Agent: Thank you for your time, sir. Have a wonderful day!
