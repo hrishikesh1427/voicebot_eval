@@ -1,4 +1,8 @@
 
+<img width="1730" height="856" alt="Screenshot 2025-11-03 123426" src="https://github.com/user-attachments/assets/cc462bc0-dc9e-45fa-be79-8b848886f3d3" />
+
+<img width="952" height="748" alt="Screenshot 2025-11-03 123511" src="https://github.com/user-attachments/assets/98578a87-bfee-4f60-bc36-fb064ebdaf76" />
+
 ---
 
 ```markdown
@@ -180,7 +184,7 @@ This project is intended for internal evaluation and research purposes related t
 ## ✉️ Contact
 
 Developed by **Hrishikesh Vastrad**
-📧 *[hrihivastrad14@gmail.com](mailto:hrihivastrad14@gmail.com])*
+📧 *[hrishivastrad14@gmail.com](mailto:hrishivastrad14@gmail.com])*
 
 ```
 
