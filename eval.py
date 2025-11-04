@@ -317,21 +317,63 @@ class HybridEvaluator:
         }
 
     # ---------- Prompt ----------
+    # def metric_prompt(self, section: str, metric: dict, transcript: str):
+    #     """Strict JSON-only prompt for one metric."""
+    #     return (
+    #         f"You are an expert evaluator for a Maruti Suzuki voicebot.\n"
+    #         f"Evaluate ONLY the metric '{metric['name']}' from the '{section}' category.\n"
+    #         f"Description: {metric['desc']}\n"
+    #         f"Score scale: 0 (worst) to {metric['max']} (best).\n\n"
+    #         "Return ONLY valid JSON with the following keys:\n"
+    #         f"- {metric['name']}: numeric score between 0 and {metric['max']}\n"
+    #         "- comments: short reasoning (1-2 lines)\n"
+    #         "- proof: exact line(s) or phrases from transcript that support the score\n\n"
+    #         "Do NOT include examples, explanations, or text outside JSON.\n\n"
+    #         f"Transcript:\n{transcript}"
+    #     )
     def metric_prompt(self, section: str, metric: dict, transcript: str):
-        """Strict JSON-only prompt for one metric."""
-        return (
-            f"You are an expert evaluator for a Maruti Suzuki voicebot.\n"
-            f"Evaluate ONLY the metric '{metric['name']}' from the '{section}' category.\n"
-            f"Description: {metric['desc']}\n"
-            f"Score scale: 0 (worst) to {metric['max']} (best).\n\n"
-            "Return ONLY valid JSON with the following keys:\n"
-            f"- {metric['name']}: numeric score between 0 and {metric['max']}\n"
-            "- comments: short reasoning (1-2 lines)\n"
-            "- proof: exact line(s) or phrases from transcript that support the score\n\n"
-            "Do NOT include examples, explanations, or text outside JSON.\n\n"
-            f"Transcript:\n{transcript}"
-        )
+        """Production-grade JSON-only prompt for one Voicebot evaluation metric."""
+        return f"""
+    ROLE:
+    You are an expert conversation quality evaluator for the Maruti Suzuki Voicebot.
 
+    TASK:
+    Evaluate the transcript provided below for the specific metric '{metric['name']}' under the '{section}' category.
+
+    METRIC DETAILS:
+    - Description: {metric['desc']}
+    - Scoring Scale: 0 (worst) to {metric['max']} (best)
+
+    EVALUATION FOCUS:
+    - Assess only this single metric; ignore all others.
+    - Base your judgment strictly on the agent’s and customer’s spoken interactions as shown in the transcript.
+    - Remain objective — no assumptions or inferred meanings.
+
+    SCORING REQUIREMENTS:
+    - Assign one numeric score between 0 and {metric['max']}
+    - Provide a brief reasoning (1–2 lines)
+    - Extract verbatim supporting phrase(s) from the transcript
+
+    OUTPUT FORMAT:
+    ```json
+    {{
+    "{metric['name']}": <numeric_score_between_0_and_{metric['max']}>,
+    "comments": "<short_reasoning>",
+    "proof": "<exact_line_or_phrase_from_transcript>"
+    }}
+    CRITICAL INSTRUCTIONS:
+
+    Respond ONLY with the JSON object shown above — no explanations, notes, or markdown.
+
+    Ensure valid JSON (double quotes only, no trailing commas).
+
+    The "proof" field must contain exact verbatim text from the transcript.
+
+    If the transcript lacks evidence for this metric, return an empty string for "proof".
+
+    TRANSCRIPT:
+    {transcript}
+"""
     # ---------- Metric Evaluation ----------
     def evaluate_metric(self, section: str, metric: dict, transcript: str):
         """Call LLM for one metric."""
