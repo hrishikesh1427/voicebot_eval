@@ -3,98 +3,87 @@
 
 <img width="952" height="748" alt="Screenshot 2025-11-03 123511" src="https://github.com/user-attachments/assets/98578a87-bfee-4f60-bc36-fb064ebdaf76" />
 
----
+# Hybrid Metric-wise Voicebot Evaluator
 
-```markdown
-# 🎙️ Hybrid Metric-wise Voicebot Evaluator
+## Overview
+This project provides an intelligent evaluation framework for a **Voicebot Quality Analysis System**, designed to automatically assess call transcripts using a **hybrid LLM-based evaluation** approach.  
+It evaluates voicebot performance across four key dimensions — **Quality**, **Business**, **Experience**, and **Compliance** — producing structured JSON outputs with clear scores, comments, and extracted proofs from the conversation.
 
-An intelligent evaluation framework for a **Voicebot Quality Analysis System**, designed to automatically assess call transcripts using a **hybrid LLM-based evaluation** method.  
-It evaluates performance across four key dimensions — **Quality**, **Business**, **Experience**, and **Compliance** — producing structured JSON outputs with transparent scoring and proof extraction.
-
----
-
-## 🚀 Features
-
-- 🤖 **Automated evaluation** using LLMs (JSON-only prompts)
-- 🧠 **Metric-wise scoring** for granular analysis
-- 💬 **Proof extraction** – highlights exact voicebot utterances used to justify scores
-- 📊 **Section-wise totals and weighted percentages**
-- 💾 Generates readable and structured `.json` reports for each transcript
-- 🖥️ Compatible with a **frontend dashboard UI** for visualization and filtering
+The framework enables transparent, consistent, and explainable evaluation for enterprise-grade conversational AI systems.
 
 ---
 
-## ⚙️ How It Works
-
-1. Reads transcript text files automatically.  
-2. Sends each to the LLM with structured metric-specific prompts.  
-3. Receives strict JSON output (score, comments, proof).  
-4. Aggregates per-metric, per-section, and final weighted scores.  
-5. Saves output reports as JSON for easy review or visualization.
+## Features
+- Automated LLM-driven transcript evaluation.
+- Metric-wise scoring and per-section aggregation.
+- Proof extraction: highlights transcript lines justifying each score.
+- Weighted scoring across multiple categories.
+- Structured and human-readable JSON reports.
+- Integrates with a dashboard UI for visualization.
 
 ---
 
-## 🧩 Evaluation Metrics
+## Evaluation Framework
 
-### **1️⃣ Quality (Weight: 35%)**
-Focuses on how well the bot understands and maintains conversation context.
+The evaluation is divided into four weighted categories, each containing multiple metrics. Every metric has a defined maximum score and contributes to the overall weighted result.
+
+### 1. Quality (Weight: 35%)
+Measures how accurately and contextually the bot handles conversations.
 
 | Metric | Max | Description |
 |---------|-----|-------------|
-| **Intent Understanding** | 10 | How accurately the bot grasps the customer's intent. |
-| **Response Relevance** | 10 | Logical and appropriate response quality. |
-| **Context Continuity** | 10 | Ability to stay on topic and maintain context. |
+| Intent Understanding | 10 | Accuracy in identifying customer intent. |
+| Response Relevance | 10 | Logical consistency and relevance of responses. |
+| Context Continuity | 10 | Ability to maintain conversational context. |
 
 ---
 
-### **2️⃣ Business (Weight: 30%)**
-Evaluates whether the bot helps achieve intended business goals.
+### 2. Business (Weight: 30%)
+Assesses how effectively the bot meets organizational and process goals.
 
 | Metric | Max | Description |
 |---------|-----|-------------|
-| **Conversion Accuracy** | 15 | Measures if the desired outcome (e.g., renewal, booking) is achieved. |
-| **Upsell/EMI Offers** | 5 | Checks if upsell opportunities were offered. |
-| **Escalation Accuracy** | 10 | Ensures proper escalation for complex cases. |
+| Conversion Accuracy | 15 | Success in achieving intended business outcomes. |
+| Upsell/EMI Offers | 5 | Presence of relevant offers or upsell attempts. |
+| Escalation Accuracy | 10 | Correct escalation handling when required. |
 
 ---
 
-### **3️⃣ Experience (Weight: 25%)**
-Assesses the emotional and human quality of the bot’s interaction.
+### 3. Experience (Weight: 25%)
+Evaluates conversational tone, emotional intelligence, and user experience.
 
 | Metric | Max | Description |
 |---------|-----|-------------|
-| **Empathy & Tone** | 15 | Warmth, tone, and friendliness of the bot. |
-| **Interruption Handling** | 10 | How well the bot manages interruptions or overlaps. |
-| **Politeness & Clarity** | 5 | Professional and clear communication. |
+| Empathy & Tone | 15 | Friendliness, tone, and human-like warmth. |
+| Interruption Handling | 10 | Smooth management of interruptions. |
+| Politeness & Clarity | 5 | Courtesy and clear communication. |
 
 ---
 
-### **4️⃣ Compliance (Weight: 10%)**
-Ensures the bot follows standard communication and process protocols.
+### 4. Compliance (Weight: 10%)
+Verifies adherence to operational and communication guidelines.
 
 | Metric | Max | Description |
 |---------|-----|-------------|
-| **Introduction** | 5 | Proper greeting and mention of recorded line. |
-| **Verification** | 5 | Confirms customer or vehicle details. |
-| **Rules Compliance** | 5 | Follows required disclaimers and policies. |
-| **Closing** | 5 | Ends the conversation courteously. |
+| Introduction | 5 | Proper greeting and call disclosure. |
+| Verification | 5 | Validation of customer or case details. |
+| Rules Compliance | 5 | Following internal or legal communication rules. |
+| Closing | 5 | Professional and polite call conclusion. |
 
 ---
 
-## 🧮 Scoring Methodology
+## Scoring Methodology
 
-Each section’s metrics are individually evaluated and aggregated using weighted averages.
+Each section’s score is calculated using the ratio of total metric scores to their maximum possible scores, followed by weighted aggregation across all sections.
 
 **Formulas:**
-
-```
-
 Section Score (%) = (Sum of Metric Scores / Sum of Metric Max) × 100
 Final Score = Σ (Section Score × Section Weight)
 
-````
+yaml
+Copy code
 
-**Example:**
+**Example Calculation:**
 
 | Section | Score % | Weight | Weighted Contribution |
 |----------|----------|---------|-----------------------|
@@ -106,7 +95,7 @@ Final Score = Σ (Section Score × Section Weight)
 
 ---
 
-## 🧠 Output Format (Example)
+## Output Format (Example)
 
 ```json
 {
@@ -132,62 +121,49 @@ Final Score = Σ (Section Score × Section Weight)
     "final_weighted_score": 82.5
   }
 }
-````
-
----
-
-## 💻 Optional Dashboard UI
-
-A companion dashboard built with **React + Tailwind CSS** is available for:
-
-* Searching and filtering evaluation files
-* Viewing metric-level comments and proofs
-* Comparing transcripts by overall score
-
----
-
-## 🧾 Weight Justification
-
-| Category             | Weight                                                                                            | Justification |
-| -------------------- | ------------------------------------------------------------------------------------------------- | ------------- |
-| **Quality (35%)**    | Foundation of conversational AI — understanding user intent and context is critical for accuracy. |               |
-| **Business (30%)**   | Directly affects ROI and customer conversions.                                                    |               |
-| **Experience (25%)** | Influences brand perception and customer satisfaction.                                            |               |
-| **Compliance (10%)** | Essential for process adherence but non-influential to dialogue quality.                          |               |
-
----
-
-## 📊 Summary
-
-This framework ensures balanced, transparent, and explainable evaluation of a voicebot system.
-It emphasizes **comprehension**, **conversion**, **experience**, and **compliance**, enabling both **quantitative scoring** and **qualitative insights**.
-
----
-
-## 🧠 Tech Stack
-
-| Component               | Technology                                    |
-| ----------------------- | --------------------------------------------- |
-| **Backend**             | Python, dotenv, OpenAI API                    |
-| **Frontend (Optional)** | React, Tailwind, Vite                         |
-| **Output Format**       | JSON                                          |
-| **Evaluation Method**   | Metric-wise LLM scoring with proof extraction |
-
----
-
-## 🧾 License
-
-This project is intended for internal evaluation and research purposes related to Voicebot Quality Analysis.
-
----
-
-## ✉️ Contact
-
-Developed by **Hrishikesh Vastrad**
-📧 *[hrishivastrad14@gmail.com](mailto:hrishivastrad14@gmail.com])*
-
 ```
+Workflow
+The evaluator reads transcript text files from a directory.
 
+Each transcript is processed through structured LLM prompts.
 
+The model outputs metric-level scores, comments, and proof segments.
 
-```
+The system aggregates section-wise and overall results.
+
+All evaluations are saved as JSON reports for review or visualization.
+
+Dashboard UI (Optional)
+A companion frontend built using React + Tailwind CSS can be integrated for:
+
+Searching and filtering evaluated transcripts.
+
+Viewing metric-level insights and extracted proofs.
+
+Comparing overall performance across different transcripts.
+
+Weight Justification
+Category	Weight	Justification
+Quality (35%)	Primary indicator of core conversational accuracy and logic.	
+Business (30%)	Measures contribution toward business outcomes.	
+Experience (25%)	Reflects user satisfaction and emotional tone.	
+Compliance (10%)	Ensures adherence to process and legal standards.	
+
+Summary
+The Hybrid Metric-wise Voicebot Evaluator delivers transparent, explainable, and scalable voicebot evaluation.
+It integrates structured metric scoring, weighted aggregation, and LLM-based judgment to produce reliable and interpretable assessments of conversational AI systems.
+
+Tech Stack
+Component	Technology
+Backend	Python, dotenv, OpenAI API
+Frontend (Optional)	React, Tailwind CSS, Vite
+Output Format	JSON
+Evaluation Logic	Metric-wise LLM evaluation using structured prompts
+
+License
+This project is intended for research and internal evaluation purposes related to automated voicebot quality analysis.
+
+Author
+Hrishikesh Vastrad
+AI Engineer Trainee, SandLogic Technologies
+Email: hrishivastrad14@gmail.com
